@@ -1,8 +1,3 @@
-playBtn = $('#play');
-song = new Audio('chicken_attack.ogg');
-duration = song.duration;
-
-
 // Load the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/player_api";
