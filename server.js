@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-  console.log('Someone connected!');
+  console.log('Client connected');
   socket.emit('first shot', db.getData("/count"));
   socket.on('shoot', function (data) {
     db.push("/count", db.getData("/count")+1);
