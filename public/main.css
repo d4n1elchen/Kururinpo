@@ -9,6 +9,7 @@ html {
 
 body {
  vertical-align: middle;
+ overflow: hidden;
 }
 
 #shoot {
