@@ -1,0 +1,4 @@
+*.sw*
+
+db.json
+node_modules
