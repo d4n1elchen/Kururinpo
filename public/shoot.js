@@ -5,7 +5,6 @@ $("#high span").text("x0");
 shootBtn.click(function(){
   ga('send', 'event', 'Shoot', 'click');
   socket.emit('shoot', 'hi');
-  push();
 })
 
 socket.on('shot', function (cnt) {
