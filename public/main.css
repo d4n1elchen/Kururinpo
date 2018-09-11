@@ -28,19 +28,14 @@ body {
 
 #high {
  font-family: "Noto Sans", "Noto Sans CJK JP", "微軟正黑體", sans-serif;
- position: fixed;
+ position: relative;
  text-align: center;
- font-size: 40px;
+ font-size: 30px;
  font-weight: bold;
- left: calc(50% - 300px);
- top: 10%;
- width: 600px;
+ left: -50%;
+ width: 100%;
  opacity: .8;
- text-shadow: 0px 0px 20px rgb(255, 255, 255),
-              10px 0px 20px rgb(255, 255, 255),
-              0px 10px 20px rgb(255, 255, 255),
-              0px -10px 20px rgb(255, 255, 255),
-              -10px 0px 20px rgb(255, 255, 255);
+ text-shadow: 2px 2px 10px  #fff, -2px -2px 10px  #fff, 2px -2px 10px  #fff, -2px 2px 10px  #fff;
 }
 
 #ytplayer {
