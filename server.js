@@ -6,7 +6,8 @@ var io = require('socket.io')(server);
 var JsonDB = require('node-json-db');
 var db = new JsonDB("db", true, false);
 
-server.listen(3000);
+var port = process.env.PORT || 3000;
+server.listen(port);
 
 app.use(express.static('public'));
 
