@@ -19,6 +19,6 @@
   "dependencies": {
     "express": "^4.14.1",
     "node-json-db": "^0.7.3",
-    "socket.io": "^1.7.2"
+    "socket.io": "^2.1.1"
   }
 }

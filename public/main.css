@@ -9,27 +9,25 @@ html {
 
 body {
  vertical-align: middle;
- background-image: url("quickdove.gif");
- background-size: contain;
- background-attachment: fixed;
- background-position: center;
- background-repeat: no-repeat;
 }
 
 #shoot {
+ font-family: "Noto Sans", "Noto Sans CJK JP", "微軟正黑體", sans-serif;
  position: fixed;
- left: calc(50% - 40px);
+ left: calc(50% - 100px);
  bottom: 5%;
  height: 50px;
- width: 80px;
+ width: 200px;
  z-index: 10;
+ font-size: 1.2em;
+ background-color: rgb(255, 200, 200);
+ border: none;
+ box-shadow: 0px 0px 10px rgb(255, 200, 200);
+ border-radius: 12px;
 }
 
-.gif {
- position: fixed;
-}
-
-.high {
+#high {
+ font-family: "Noto Sans", "Noto Sans CJK JP", "微軟正黑體", sans-serif;
  position: fixed;
  text-align: center;
  font-size: 40px;
@@ -37,53 +35,18 @@ body {
  left: calc(50% - 300px);
  top: 10%;
  width: 600px;
- opacity: .6;
+ opacity: .8;
+ text-shadow: 0px 0px 20px rgb(255, 255, 255),
+              10px 0px 20px rgb(255, 255, 255),
+              0px 10px 20px rgb(255, 255, 255),
+              0px -10px 20px rgb(255, 255, 255),
+              -10px 0px 20px rgb(255, 255, 255);
 }
 
-.red {
- color: red;
-}
-
-.green {
- color: green;
-}
-
-.blue {
- color: blue;
-}
-
-.black {
- color: black;
-}
-
-#player {
- position: fixed;
- top: 0px;
- left: 0px;
- width: 100%;
- height: 25px;
-}
-
-#play {
+#ytplayer {
  position: absolute;
- display: inline-block;
- height: 20px;
- width: 20px;
- vertical-align: middle;
- top: 2px;
- left: 5px;
-}
-
-#seek {
- display: inline-block;
+ top: 0;
+ left: 0;
  width: 100%;
  height: 100%;
- margin: 0;
- outline : none;
- vertical-align: middle;
- -webkit-appearance: none;
-}
-
-#seek::-webkit-slider-thumb {
- -webkit-appearance: none;
 }

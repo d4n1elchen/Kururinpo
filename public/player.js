@@ -2,51 +2,27 @@ playBtn = $('#play');
 song = new Audio('chicken_attack.ogg');
 duration = song.duration;
 
-song.type= 'audio/ogg';
-song.src= 'chicken_attack.ogg';
 
-$('#seek').attr('max',song.duration);
+// Load the IFrame Player API code asynchronously.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-firstPlay = true;
-song.onplay = function() {
-  firstPlay = false;
-}
-document.body.ontouchstart = function() {
-  document.body.ontouchstart=null;
-  if(firstPlay) play();
-}
-
-playBtn.click(function(e) {
-  e.preventDefault();
-  if(song.paused) {
-    play();
-  } else {
-    pause();
-  }
-});
-playBtn.click();
-
-song.addEventListener('timeupdate',function (){
-  curtime = parseInt(song.currentTime, 10);
-  $("#seek").val(curtime);
-  $("#seek").css({
-    'background-image':'-webkit-linear-gradient(left ,rgba(0,0,0,.2) 0%,rgba(0,0,0,.2) '+curtime*100/song.duration+'%,#fff '+curtime*100/song.duration+'%, #fff 100%)'
+// Replace the 'ytplayer' element with an <iframe> and
+// YouTube player after the API code downloads.
+var player;
+function onYouTubePlayerAPIReady() {
+  player = new YT.Player('ytplayer', {
+    videoId: 'QYGZv24nsGw',
+    suggestedQuality: 'hd1080',
+    playerVars: { 'autoplay': 1, 'controls': 0, 'rel': 0, 'showinfo': 0, },
+    events: {
+      onStateChange: (e) => {
+        if (e.data === YT.PlayerState.ENDED) {
+          player.playVideo(); 
+        }
+      }
+    }
   });
-});
-
-song.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-}, false);
-
-function play() {
-    song.play();
-    playBtn.removeClass("play-pause__play");
-    playBtn.addClass("play-pause__pause");
-}
-
-function pause() {
-    song.pause();
-    playBtn.removeClass("play-pause__pause");
-    playBtn.addClass("play-pause__play");
 }

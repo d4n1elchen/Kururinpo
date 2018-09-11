@@ -10,7 +10,6 @@
 
     <link rel="icon" href="/bigshoot.gif">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="playpause.css">
     <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
 
     <meta name="og:title" content="大爆射">
@@ -22,15 +21,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   </head>
   <body>
-    <button id="shoot">(´◓Д◔`)<br>(　っ c )</button>
-    <div id="player">
-      <div class="play-pause play-pause__play" id="play"></div>
-      <input type="range" id="seek" value="0" max=""/>
-    </div>
+    <button id="shoot">咕嚕靈波(●´∀`)ノ♡</button>
+    <div id="ytplayer"></div>
     <div id="counter">
-      <div class="high shake-constant shake-little blue">大爆射 <span>x1<span></div>
-      <div class="high shake-constant shake red">大爆射 <span>x1<span></div>
-      <div class="high shake-constant shake-hard green">大爆射 <span>x1<span></div>
+      <div id="high">咕嚕靈波(●´∀`)ノ♡ <span>x1<span></div>
     </div>
 
     <script>
@@ -45,13 +39,13 @@
     </script>
 
     <script>
-      console.log("\n\n\n\n\n(´◓Д◔`) 哇幹!!\n(　っ%cค้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้้%cc ) by Daniel Chen", "color: red", "color: auto");
-      console.log("Github https://github.com/team6612/BigBoomShoot/");
+      console.log("咕嚕靈波(●´∀`)ノ♡ by Daniel Chen", "color: red", "color: auto");
+      console.log("Github https://github.com/d4n1elchen/Kururinpo/");
       console.log("成功大學電腦網路愛好社 https://www.facebook.com/ncku.ccns");
     </script>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script> var socket = io.connect('http://xn--ols3vg48e.club'); </script>
+    <script> var socket = io.connect('localhost'); </script>
     <script src="ctc.js"></script>
     <script src="shoot.js"></script>
     <script src="player.js"></script>
