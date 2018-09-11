@@ -1,7 +1,6 @@
-var shoot_count = 1;
 var shootBtn = $("#shoot");
 
-$("#high span").text("x"+shoot_count);
+$("#high span").text("x0");
 
 shootBtn.click(function(){
   ga('send', 'event', 'Shoot', 'click');
@@ -9,16 +8,14 @@ shootBtn.click(function(){
   push();
 })
 
-socket.on('shot', function (data) {
-  shoot_count += data;
-  $("#high span").text("x"+shoot_count);
+socket.on('shot', function (cnt) {
+  $("#high span").text("x"+cnt);
   if (!isMobile)
     shoot('咕嚕靈波(●´∀`)ノ♡');
 });
 
-socket.on('first shot', function (data) {
-  shoot_count = data;
-  $("#high span").text("x"+shoot_count);
+socket.on('first shot', function (cnt) {
+  $("#high span").text("x"+cnt);
   if (!isMobile)
     shoot('咕嚕靈波(●´∀`)ノ♡');
 });

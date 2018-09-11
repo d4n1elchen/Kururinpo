@@ -18,6 +18,7 @@
   "homepage": "https://github.com/d4n1elchen/Kururinpo#readme",
   "dependencies": {
     "express": "^4.14.1",
+    "firebase": "^5.4.2",
     "node-json-db": "^0.7.3",
     "socket.io": "^2.1.1"
   }
