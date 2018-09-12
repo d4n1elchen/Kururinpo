@@ -32,4 +32,18 @@ cntRef.get().then((doc) => {
       io.sockets.emit('shot', cnt);
     });
   });
+  setInterval(async () => {
+    const inc = Math.floor(Math.random()*10);
+    for(let i = 0; i < inc; i++) {
+      cntRef.set({ cnt: ++cnt });
+      io.sockets.emit('shot', cnt);
+      await sleep(Math.floor(Math.random()*300));
+    }
+  }, 2000)
 })
+
+function sleep(ms){
+  return new Promise(resolve=>{
+      setTimeout(resolve, ms)
+  })
+}
