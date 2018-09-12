@@ -24,7 +24,7 @@ var cnt = 0;
 client.query('SELECT count FROM kururinpo;').then((res) => {
   cnt = res.rows[0].count
   io.on('connection', async function (socket) {
-    console.log('Client connaected, current cnt: '+cnt);
+    console.log('Client connected, current cnt: '+cnt);
     socket.emit('first shot', cnt);
     socket.on('shoot', function (data) {
       io.sockets.emit('shot', ++cnt);
